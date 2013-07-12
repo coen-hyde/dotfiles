@@ -27,6 +27,7 @@ if [[ ! "${prompt_colors[@]}" ]]; then
     "0;32" # information color
     "1;30" # bracket color
     "0;31" # error color
+    "0;36" # important information
   )
 
   if [[ "$SSH_TTY" ]]; then
@@ -64,7 +65,7 @@ function prompt_git() {
       END {print r}'
   )"
   if [[ "$flags" ]]; then
-    output="$output$c1:$c0$flags"
+    output="$output$c1:$c3$flags"
   fi
   echo "$c1[$c0$output$c1]$c9"
 }
@@ -106,7 +107,7 @@ function prompt_command() {
   # misc: [cmd#:hist#]
   # PS1="$PS1$c1[$c0#\#$c1:$c0!\!$c1]$c9"
   # path: [user@host:path]
-  PS1="$PS1 $c0\u$c1@$c0\h$c1:$c0\w$c9"
+  PS1="$PS1 $c0\u$c1@$c0\h$c1:$c3\w$c9"
   PS1="$PS1$c1]"
   # svn: [repo:lastchanged]
   PS1="$PS1$(prompt_svn)"
