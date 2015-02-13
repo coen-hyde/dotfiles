@@ -19,3 +19,6 @@ function titlebar() {
 if [[ -e ~/.ssh/known_hosts ]]; then
   complete -o default -W "$(cat ~/.ssh/known_hosts | sed 's/[, ].*//' | sort | uniq | grep -v '[0-9]')" ssh scp stfp
 fi
+
+# Set JAVA_HOME
+export JAVA_HOME=$(/usr/libexec/java_home)
