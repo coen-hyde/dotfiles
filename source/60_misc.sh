@@ -19,7 +19,7 @@ complete -F _to_completion to
 beer() {
   spec=$1
   shift
-  cd $(proot); bundle exec rspec ./spec/$spec $@
+  cd $(proot); bundle exec rspec "./spec/$spec" "$@"
 }
 
 _beer_completion() {
