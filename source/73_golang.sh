@@ -1,5 +1,8 @@
 export GOPATH=$HOME/golang
 export GO_PROJECTS_DIR="${GOPATH}/src/github.com/coen-hyde"
+export GO15VENDOREXPERIMENT=1
+PATH=$(path_remove ~/golang/bin):~/golang/bin
+
 
 gop() {
   cd $GO_PROJECTS_DIR/$1
