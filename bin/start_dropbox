@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker run \
+  -d \
+  --restart=always \
+  --name=dropbox \
+  -e DBOX_UID=$(id -u) \
+  -e DBOX_GID=$(id -g) \
+  -v $HOME/Dropbox:/dbox/Dropbox \
+  -v $HOME/.dropbox:/dbox/.dropbox \
+  janeczku/dropbox
